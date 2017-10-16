@@ -1,0 +1,178 @@
+$black: #000;
+$white: #fff;
+
+* {
+  transition: all 500ms ease;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+body {
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  top: 0;
+}
+
+.navigation.top {
+  $text: #333;
+  background-color: $white;
+  box-shadow: 0 0 2px $black;
+  height: 4em;
+  padding: 0 .5em;
+  position: relative;
+  z-index: 90;
+
+  a {
+    color: $text;
+  }
+
+  li {
+    display: inline-block;
+    padding: .5em 1em;
+    position: relative;
+  }
+
+  nav {
+    display: inline-block;
+  }
+
+  ul {
+    color: $text;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .brand {
+    display: inline-block;
+    max-width: 10em;
+    padding: .5em 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .flip.hover > li {
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: hoverlink;
+    animation-timing-function: ease;
+  }
+
+  .flip.unhover > li {
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: hoverlinkbackwards;
+    animation-timing-function: ease;
+  }
+}
+
+.reps {
+  background-color: $white;
+  box-sizing: border-box;
+  height: 65vh;
+  list-style: none;
+  margin: 1vh 1vw;
+  overflow-y: auto;
+  padding: 0;
+  position: relative;
+  top: 4em;
+  width: 18vw;
+
+  li {
+    cursor: pointer;
+    padding: 1vh 1vw;
+
+    &:hover {
+      $hover: #555;
+
+      background-color: $hover;
+      color: $white;
+    }
+  }
+}
+
+.representatives {
+  $lnav-grey: #2d2d2d;
+  $accept: #18bf01;
+
+  position: absolute;
+  top: 0;
+  z-index: 0;
+
+  .currentusers {
+    background-color: $lnav-grey;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    width: 20vw;
+
+    li { box-sizing: border-box; }
+    .ulsearch,
+    .options {
+      box-sizing: border-box;
+      list-style: none;
+      margin: 0;
+      padding: 1vh 1vw 0;
+      position: relative;
+      top: 4em;
+      width: 20vw;
+    }
+
+    [type="text"] {
+      width: 100%;
+    }
+
+    .options {
+      padding: 0;
+      text-align: center;
+    }
+
+    .create,
+    .delete {
+      margin: .5vh;
+      padding: .5vh;
+    }
+
+    .create {
+      color: $accept;
+    }
+
+    .search {
+      color: $white;
+      text-align: center;
+    }
+
+    .searchbar {
+      border: 0;
+      border-bottom: 1px solid $black;
+      border-top: 1px solid $black;
+      margin: .5vh 0;
+      padding: .5vh .5vw;
+    }
+  }
+}
+
+
+@keyframes hoverlink {
+  0% { font-weight: 400; top: 0; }
+  50% { font-weight: 600; top: 10em; }
+  51% { font-weight: 600; top: -10em; }
+  100% { font-weight: 600; top: 0; }
+}
+
+@keyframes hoverlinkbackwards {
+  0% { font-weight: 600; top: 0; }
+  50% { font-weight: 600; top: -10em; }
+  51% { font-weight: 600; top: 10em; }
+  100% { font-weight: 400; top: 0; }
+}

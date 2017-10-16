@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "intranet-dashboard-182816",
+  "private_key_id": "7b5d56f6955184edda50c77e0d14eaa771cf5db8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2p3xnTyAxNQQw\nKcQKe3PKgFiZUU8I0eBTnHv+qTW/Nm2Pb/HGsgljNd+81SRp4pyM7VV3jMiF1QCQ\nfeWoOM94VXyLlgtXZ1IFT8lDdyp5c4YxcEGsMG6SFQb94vZdVzzjCgc3wDK6pOGO\n+J0GeY4PU63KXRALs0c/85fgf5N6ytJena/wZ+Tf9QciHd8xkorMQEfs+DDyh51Y\no1TIvZfD0OC1v2ZerpGYPJQpLwBrAtW42C7ZOGiq1e9FsdgT3y/D7RohjmcoDtfA\n37iHDZYsOLTS76tVLEPRZcyB/4bJwVyieE7ZD9UDxO7F/UTlvPUOGTUj3T9sckgY\n+abGtzxbAgMBAAECggEAS/U+wN+g7ZW0liroQcuxDYduUOQFUA+nkF3FGtRXa5tA\n2KOfEhg72ywuTSL+L6JzpA+WuU6snStFPtF8TgbCELLMRmgxczmeXGMfuZS27ybh\nqXGbffXuJYXlEHPwLET5JxmmgsLE1eV3f7NX6bdnImyUG1G0OIlnmeq9QDkNpcQ6\nxZCjtskq3awMP/DSgwMIKd2bZmQt+wMF9iuzYt4UdoW8OQCmIWbyVFhTY8JHvqHI\nEKYvmQV9weCIgNZHF4mfUjU1lvLlT+Ym9YILobZOvlw6rbg7R8S08EP0RfrQKRUB\nU8H82Rcv1F2YccgP2rZ2Lk4Oo0GVmranXSb3Rdfk0QKBgQDiyg/TsS7URJe53lsX\nvXwtyovUkr6JW81EaSdKLGkd00aQxqsWo+QbjMk78t2bmaTHdzJOF+WE55X3qv0m\nTiIuOTX7PcE5RlCoLReN2hgTMUiAsBUhC0UGP/Poh/RhRmQfivtkablcgAsbVca7\nlk9DlstNQXxvKtUuR/LpKdo7/wKBgQDOLifqCpz5LC3PmosODb6G0P6M5tgYIDvU\n7qRvnnBmIh2DoG6WYlqcQziCMth4tDJj0tz5xGAu23Gdmvr0omUKcrhmaFVzvYcw\nw5Vbp1Lf/A5rwz3ykjFdRSoVoR47ZmwmrC/6/oavtnRAvhPEN3RMLqfdPSuCRZgL\n73AqPvVvpQKBgCDBwst22ia6yZeFMG8bZWZPzSalE3RPmDR7Y7to8r3mGFks+OVK\nQtZf3WkVSUECTjSpWNDCztoFgTnGrs3rlzBJ/ywM3W3iZCAGc1J/395Vzf0YcdTW\nBeBDOH2rtXafbjLIJkt4oddkfzYxi4TozwYaL7826Dw+WZBXwBRBgU4NAoGBAKgZ\nCYHPVVvxoQf5wBWdLxFLo73NF7HT1fQs/PPkAU/D0LxYONFzLtzoEVJVkhgXEl5A\ntNkOOjz5vQ/6I1EAddCm56DWv5S1mVswmr03FmJ3ZmqFrCPw/T5F/aHU0okrYFHH\nYPcKPVVVNEL0tbjsXW0fPM0r6iU0CFryxEgtPH3hAoGBAI/7bx8O9+keYjrH8tf8\njirDbiH0oreCkXAUGrOmA5FWUM+7Uf24BnJ8M6QDxzYPNmnMrEETW1V3zMsWIReN\nXi4gjq+d2PYebQx9JIpSbtsrxv4E7vLeha1DyTiXZDN9/lKKzG6Uq1VOZ6XS65uq\nEd95tkYiyJaOrfFHwiblPfvV\n-----END PRIVATE KEY-----\n",
+  "client_email": "intranet-analytics-grabber@intranet-dashboard-182816.iam.gserviceaccount.com",
+  "client_id": "102436541072366295504",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/intranet-analytics-grabber%40intranet-dashboard-182816.iam.gserviceaccount.com"
+}
