@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/intranet.dir/main.cpp.o  -o intranet -lpthread -lboost_system -lpython3.6m -lpq 

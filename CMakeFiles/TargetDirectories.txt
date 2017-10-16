@@ -1,3 +1,0 @@
-/home/chilly/Projects/cpp/Intranet/CMakeFiles/rebuild_cache.dir
-/home/chilly/Projects/cpp/Intranet/CMakeFiles/intranet.dir
-/home/chilly/Projects/cpp/Intranet/CMakeFiles/edit_cache.dir
