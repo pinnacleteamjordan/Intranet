@@ -5,8 +5,8 @@
 mkdir views
 nvim pagename.html
 nvim main.cpp
-use existing examples to make your own
 ```
+use existing examples to make your own
 
 ## Compiling
 #### Requirements
@@ -22,9 +22,10 @@ PostgreSQL Libs
 - Optional, only use if using database
 
 #### Build Commands
+```
 cmake .
-
 make
+```
 
 ## Known Issues
 AnalyticsData()
