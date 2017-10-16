@@ -70,7 +70,6 @@ class SQL {
             }
             nFields = PQnfields(res);
 
-            std::cout << nFields << std::endl;
             for (x = 0; x < PQntuples(res); x++) {
                 for (i = 0; i < nFields; i++) {
                     std::string str_a = PQfname(res, i);
@@ -83,6 +82,9 @@ class SQL {
             return returnData;
         }
 };
+
+std::map<std::string, std::string> formdata(std::string fd) {
+}
 
 struct Middleware {
     Middleware() {
@@ -166,7 +168,7 @@ int main() {
             return crow::mustache::load("representatives.html").render(ctx);
     });
 
-    CROW_ROUTE(app, "/get/reps/init")([]{
+    CROW_ROUTE(app, "/get/reps/init").methods("GET"_method)([]{
             std::map<std::string, std::string>::iterator mapIterator;
             std::map<std::string, std::string> sqlValue;
             crow::json::wvalue json;
@@ -182,13 +184,36 @@ int main() {
             return json;
     });
 
-    CROW_ROUTE(app, "/get/reps/info")([]{
+    CROW_ROUTE(app, "/get/reps/info").methods("GET"_method)([]{
             std::map<std::string, std::string>::iterator mapIterator;
             std::map<std::string, std::string> sqlValue;
             crow::json::wvalue json;
 
             SQL sql;
-            sqlValue = sql.Run("SELECT * FROM
+            sqlValue = sql.Run("SELECT * FROM data_representatives");
+
+            mapIterator = sqlValue.begin();
+            for (mapIterator=sqlValue.begin(); mapIterator!=sqlValue.end(); mapIterator++) {
+                json[mapIterator->first] = mapIterator->second;
+            }
+
+            return json;
+    });
+
+    CROW_ROUTE(app, "/post/reps/info").methods("POST"_method)([](const crow::request& req) {
+            std::map<std::string, std::string> data = formdata(req.body);
+
+            return crow::response(400);
+    });
+
+    CROW_ROUTE(app, "/post/reps/new").methods("POST"_method)([](const crow::request& req) {
+            auto json = crow::json::load(req.body);
+            if (!json)
+                return crow::response(400);
+
+            std::ostringstream os;
+            os << json;
+            return crow::response{os.str()};
     });
 
     app.port(18080).multithreaded().run();

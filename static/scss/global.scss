@@ -7,6 +7,12 @@ $white: #fff;
 
 input {
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
 }
 
 body {
@@ -158,6 +164,117 @@ body {
       border-top: 1px solid $black;
       margin: .5vh 0;
       padding: .5vh .5vw;
+    }
+  }
+
+  .edit {
+    $edit-bg: #202020;
+
+    background-color: $edit-bg;
+    display: grid;
+    height: 100%;
+    margin: 0 0 0 20vw;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 80vw;
+  }
+
+  .col {
+    margin: 0 auto;
+    padding: 0 1vw;
+    position: relative;
+    top: 4em;
+    width: 20vw;
+
+    &.one {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &.two {
+      grid-column: 2;
+      grid-row: 1;
+      overflow-y: auto;
+    }
+
+    &.three {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    hr {
+      background-color: $white;
+      border: 0;
+      height: 1px;
+    }
+
+    input {
+      border: 0;
+      border-bottom: 1px solid $black;
+      border-top: 1px solid $black;
+      padding: .5vh .5vw;
+      width: 100%;
+    }
+
+    p {
+      color: $white;
+      margin: .5vw 0;
+    }
+
+    .split {
+      display: inline-block;
+      width: 9.85vw;
+    }
+  }
+
+  .row {
+    grid-column-end: 4;
+    grid-column-start: 1;
+    grid-row: 2;
+    margin: 5vh 0;
+
+    [type="button"] {
+      border: 0;
+      border-bottom: 1px solid $black;
+      border-top: 1px solid $black;
+      display: block;
+      margin: 1vh auto;
+      padding: .5vh .5vw;
+      width: 75vw;
+    }
+
+    p {
+      color: $white;
+      margin: 0 0 0 1vw;
+    }
+
+    textarea {
+      border: 0;
+      border-bottom: 1px solid $black;
+      border-top: 1px solid $black;
+      display: block;
+      font-family: 'Open Sans', sans-serif;
+      height: 25vh;
+      margin: 0 auto;
+      padding: .5vh .5vw;
+      width: 75vw;
+    }
+  }
+
+  .addphone {
+    width: initial;
+
+    select {
+      border: 0;
+      border-bottom: 1px solid $black;
+      border-top: 1px solid $black;
+      padding: .5vh .5vw;
+      width: 14.9vw;
+    }
+
+    input {
+      width: 4vw;
     }
   }
 }

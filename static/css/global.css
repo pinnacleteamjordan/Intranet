@@ -2,7 +2,12 @@
   transition: all 500ms ease; }
 
 input {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif; }
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em; }
 
 body {
   bottom: 0;
@@ -111,6 +116,83 @@ body {
       border-top: 1px solid #000;
       margin: .5vh 0;
       padding: .5vh .5vw; }
+  .representatives .edit {
+    background-color: #202020;
+    display: grid;
+    height: 100%;
+    margin: 0 0 0 20vw;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 80vw; }
+  .representatives .col {
+    margin: 0 auto;
+    padding: 0 1vw;
+    position: relative;
+    top: 4em;
+    width: 20vw; }
+    .representatives .col.one {
+      grid-column: 1;
+      grid-row: 1; }
+    .representatives .col.two {
+      grid-column: 2;
+      grid-row: 1;
+      overflow-y: auto; }
+    .representatives .col.three {
+      grid-column: 3;
+      grid-row: 1; }
+    .representatives .col hr {
+      background-color: #fff;
+      border: 0;
+      height: 1px; }
+    .representatives .col input {
+      border: 0;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+      padding: .5vh .5vw;
+      width: 100%; }
+    .representatives .col p {
+      color: #fff;
+      margin: .5vw 0; }
+    .representatives .col .split {
+      display: inline-block;
+      width: 9.85vw; }
+  .representatives .row {
+    grid-column-end: 4;
+    grid-column-start: 1;
+    grid-row: 2;
+    margin: 5vh 0; }
+    .representatives .row [type="button"] {
+      border: 0;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+      display: block;
+      margin: 1vh auto;
+      padding: .5vh .5vw;
+      width: 75vw; }
+    .representatives .row p {
+      color: #fff;
+      margin: 0 0 0 1vw; }
+    .representatives .row textarea {
+      border: 0;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+      display: block;
+      font-family: 'Open Sans', sans-serif;
+      height: 25vh;
+      margin: 0 auto;
+      padding: .5vh .5vw;
+      width: 75vw; }
+  .representatives .addphone {
+    width: initial; }
+    .representatives .addphone select {
+      border: 0;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+      padding: .5vh .5vw;
+      width: 14.9vw; }
+    .representatives .addphone input {
+      width: 4vw; }
 
 @keyframes hoverlink {
   0% {
