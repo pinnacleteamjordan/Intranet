@@ -1,10 +1,12 @@
 # Intranet
 
 ## Adding Views
-1) mkdir views
-2) nvim pagename.html
-3) nvim main.cpp
-4) use existing examples to make your own
+```
+mkdir views
+nvim pagename.html
+nvim main.cpp
+use existing examples to make your own
+```
 
 ## Compiling
 #### Requirements
@@ -25,4 +27,11 @@ cmake .
 make
 
 ## Known Issues
-AnalyticsData() does not work, the python libs are messed up and I know this.
+AnalyticsData()
+- does not work, the python libs are messed up and I know this.
+
+## Credit given where credit is due
+```
+crow_all.h
+https://github.com/ipkn/crow
+```
