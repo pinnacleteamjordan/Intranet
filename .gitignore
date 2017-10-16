@@ -1,3 +1,6 @@
+/pylibs/private-keys
+/pylibs/__pycache__
+/pylibs/crow_analytics.py
 /CMakeFiles
 /.sass-cache
 /views

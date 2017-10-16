@@ -182,5 +182,14 @@ int main() {
             return json;
     });
 
+    CROW_ROUTE(app, "/get/reps/info")([]{
+            std::map<std::string, std::string>::iterator mapIterator;
+            std::map<std::string, std::string> sqlValue;
+            crow::json::wvalue json;
+
+            SQL sql;
+            sqlValue = sql.Run("SELECT * FROM
+    });
+
     app.port(18080).multithreaded().run();
 }
