@@ -8,13 +8,16 @@
 
 ## Compiling
 #### Requirements
-GNU/Linux The project can be modified to not need this requirement however until then it uses unistd.h
+GNU/Linux
+- The project can be modified to not need this requirement however until then it uses unistd.h
 
 Boost libs
 
-Python Libs (optional, used for google authentication)
+Python Libs
+- Optional, used for google authentication and gathering analytics data
 
-PostgreSQL Libs (optional, only use if using database)
+PostgreSQL Libs
+- Optional, only use if using database
 
 #### Build Commands
 cmake .
