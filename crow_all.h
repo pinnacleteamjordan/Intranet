@@ -1,3 +1,4 @@
+#ifndef DOXYGEN_SKIP
 #pragma once
 
 #include <stdio.h>
@@ -9784,4 +9785,4 @@ namespace crow
 
 
 
-
+#endif

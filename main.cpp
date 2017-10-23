@@ -83,9 +83,6 @@ class SQL {
         }
 };
 
-std::map<std::string, std::string> formdata(std::string fd) {
-}
-
 struct Middleware {
     Middleware() {
     }
@@ -200,10 +197,19 @@ int main() {
             return json;
     });
 
-    CROW_ROUTE(app, "/post/reps/info").methods("POST"_method)([](const crow::request& req) {
-            std::map<std::string, std::string> data = formdata(req.body);
+    app.route_dynamic("/post/reps/info").methods(crow::HTTPMethod::POST)([](const crow::request& req) {
+            auto x = crow::json::load(req.body);
+            if (!x)
+                return crow::response(400);
+            const crow::json::rvalue firstname = x["firstname"];
+            std::ostringstream os;
+            os << "UPDATE data_representatives SET firstname='" << x["firstname"] << "', lastname='" << x["lastname"] << " AND id=" << x["id"];
 
-            return crow::response(400);
+            SQL sql;
+
+            std::cout << os.str() << std::endl;
+
+            return crow::response(os.str());
     });
 
     CROW_ROUTE(app, "/post/reps/new").methods("POST"_method)([](const crow::request& req) {

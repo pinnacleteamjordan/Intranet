@@ -124,7 +124,7 @@
         modify: {
             post: function () {
                 var xhr = new XMLHttpRequest(),
-                    formData = new FormData(),
+                    formData = {},
                     phone = document.getElementsByClassName('phonenumber'),
                     workphone = document.getElementsByClassName('workphone'),
                     cellphone = document.getElementsByClassName('cellphone'),
@@ -132,46 +132,49 @@
                     tmp = '',
                     x = 0;
 
-                formData.append('id', REPS.editId);
-                formData.append('firstname', document.getElementById('firstname').value);
-                formData.append('lastname', document.getElementById('lastname').value);
-                formData.append('title', document.getElementById('title').value);
-                formData.append('email', document.getElementById('emailaddress').value);
+                formData = {
+                    id: REPS.editId,
+                    firstname: document.getElementById('firstname').value,
+                    lastname: document.getElementById('lastname').value,
+                    title: document.getElementById('title').value,
+                    email: document.getElementById('emailaddress').value
+                };
                 if (phone) {
                     for (x = 0; x < phone.length; x += 1)
                         tmp += phone[x].value + ',';
                     if (tmp.length > 0)
-                        formData.append('phone', tmp);
+                        formData.phone = tmp;
                     tmp = '';
                 }
                 if (workphone) {
                     for (x = 0; x < workphone.length; x += 1)
                         tmp += workphone[x].value + ',';
                     if (tmp.length > 0)
-                        formData.append('workphone', tmp);
+                        formData.workphone = tmp
                     tmp = '';
                 }
                 if (cellphone) {
                     for (x = 0; x < cellphone.length; x += 1)
                         tmp += cellphone[x].value + ',';
                     if (tmp.length > 0)
-                        formData.append('cellphone', tmp);
+                        formData.cellphone = tmp;
                     tmp = '';
                 }
                 if (faxnumber) {
                     for (x = 0; x < faxnumber.length; x += 1)
                         tmp += faxnumber[x].value + ',';
                     if (tmp.length > 0)
-                        formData.append('faxnumber', tmp);
+                        formData.faxnumber = tmp;
                     tmp = '';
                 }
 
                 xhr.open('POST', '/post/reps/info');
                 xhr.addEventListener('load', REPS.info.modify.parse);
-                xhr.send(formData);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify(formData));
             },
             parse: function () {
-                console.log(JSON.parse(this.responseText));
+                console.log(this.responseText);
             }
         }
     };

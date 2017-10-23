@@ -1,0 +1,2 @@
+#define Intranet_VERSION_MAJOR @Intranet_VERSION_MAJOR@
+#define Intranet_VERSION_MINOR @Intranet_VERSION_MINOR@
