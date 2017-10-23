@@ -203,7 +203,7 @@ int main() {
                 return crow::response(400);
             const crow::json::rvalue firstname = x["firstname"];
             std::ostringstream os;
-            os << "UPDATE data_representatives SET firstname='" << x["firstname"] << "', lastname='" << x["lastname"] << " AND id=" << x["id"];
+            os << "UPDATE data_representatives SET firstname=" << x["firstname"] << ", lastname=" << x["lastname"] << " AND id=" << x["id"];
 
             SQL sql;
 
