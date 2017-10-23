@@ -103,22 +103,22 @@
             switch (selected) {
                 case 0:
                     CREATE.input('text', 'Work Phone', 'workphone', holder);
-                break;
+                    break;
 
                 case 1:
                     CREATE.input('text', 'Cell Phone', 'cellphone', holder);
-                break;
+                    break;
 
                 case 2:
                     CREATE.input('text', 'Fax Number', 'faxnumber', holder);
-                break;
+                    break;
 
                 case 3:
                     CREATE.input('text', 'Phone', 'phonenumber', holder);
-                break;
+                    break;
 
                 default:
-                break;
+                    break;
             }
         },
         modify: {
@@ -137,7 +137,11 @@
                     firstname: document.getElementById('firstname').value,
                     lastname: document.getElementById('lastname').value,
                     title: document.getElementById('title').value,
-                    email: document.getElementById('emailaddress').value
+                    email: document.getElementById('emailaddress').value,
+                    phone: '',
+                    workphone: '',
+                    cellphone: '',
+                    faxnumber: ''
                 };
                 if (phone) {
                     for (x = 0; x < phone.length; x += 1)
@@ -145,6 +149,8 @@
                     if (tmp.length > 0)
                         formData.phone = tmp;
                     tmp = '';
+                } else {
+                    formData.phone = '';
                 }
                 if (workphone) {
                     for (x = 0; x < workphone.length; x += 1)
@@ -152,6 +158,8 @@
                     if (tmp.length > 0)
                         formData.workphone = tmp
                     tmp = '';
+                } else {
+                    formData.workphone = '';
                 }
                 if (cellphone) {
                     for (x = 0; x < cellphone.length; x += 1)
@@ -159,6 +167,8 @@
                     if (tmp.length > 0)
                         formData.cellphone = tmp;
                     tmp = '';
+                } else {
+                    formData.cellphone = '';
                 }
                 if (faxnumber) {
                     for (x = 0; x < faxnumber.length; x += 1)
@@ -166,12 +176,21 @@
                     if (tmp.length > 0)
                         formData.faxnumber = tmp;
                     tmp = '';
+                } else {
+                    formData.faxnumber = '';
                 }
 
-                xhr.open('POST', '/post/reps/info');
-                xhr.addEventListener('load', REPS.info.modify.parse);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.send(JSON.stringify(formData));
+                if (REPS.editId === -1) {
+                    xhr.open('POST', '/post/reps/new');
+                    xhr.addEventListener('load', REPS.info.modify.parse);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify(formData));
+                } else {
+                    xhr.open('POST', '/post/reps/info');
+                    xhr.addEventListener('load', REPS.info.modify.parse);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify(formData));
+                }
             },
             parse: function () {
                 console.log(this.responseText);

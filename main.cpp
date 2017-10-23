@@ -201,25 +201,54 @@ int main() {
             auto x = crow::json::load(req.body);
             if (!x)
                 return crow::response(400);
-            const crow::json::rvalue firstname = x["firstname"];
+
             std::ostringstream os;
-            os << "UPDATE data_representatives SET firstname=" << x["firstname"] << ", lastname=" << x["lastname"] << " AND id=" << x["id"];
+
+            os << "UPDATE data_representatives SET firstname=" << x["firstname"]
+               << ", lastname=" << x["lastname"]
+               << ", title=" << x["title"]
+               << ", email=" << x["email"]
+               << ", phone=" << x["phone"]
+               << ", workphone=" << x["workphone"]
+               << ", cellphone=" << x["cellphone"]
+               << ", faxnumber=" << x["faxnumber"]
+               << " AND id=" << x["id"];
 
             SQL sql;
+            sql.Run(os.str());
 
-            std::cout << os.str() << std::endl;
+            crow::json::wvalue json;
+            json["status"] = "Complete";
+            json["data"] = "Updated user information";
 
-            return crow::response(os.str());
+            return crow::response(json);
     });
 
-    CROW_ROUTE(app, "/post/reps/new").methods("POST"_method)([](const crow::request& req) {
-            auto json = crow::json::load(req.body);
-            if (!json)
+    app.route_dynamic("/post/reps/new").methods(crow::HTTPMethod::POST)([](const crow::request& req) {
+            auto x = crow::json::load(req.body);
+            if (!x)
                 return crow::response(400);
 
             std::ostringstream os;
-            os << json;
-            return crow::response{os.str()};
+
+            os << "INSERT INTO data_representatives (firstname, lastname, title, email, phone, workphone, "
+               << "cellphone, faxnumber) VALUES (" << x["firstname"]
+               << ", " << x["lastname"]
+               << ", " << x["title"]
+               << ", " << x["email"]
+               << ", " << x["phone"]
+               << ", " << x["workphone"]
+               << ", " << x["cellphone"]
+               << ", " << x["faxnumber"];
+
+            SQL sql;
+            sql.Run(os.str());
+
+            crow::json::wvalue json;
+            json["status"] = "Complete";
+            json["data"] = "Created new user";
+
+            return crow::response(json);
     });
 
     app.port(18080).multithreaded().run();
