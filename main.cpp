@@ -241,12 +241,9 @@ int main() {
                << ", " << x["cellphone"]
                << ", " << x["faxnumber"];
 
-            SQL sql;
-            sql.Run(os.str());
-
             crow::json::wvalue json;
             json["status"] = "Complete";
-            json["data"] = "Created new user";
+            json["data"] = "Successfully added Representative";
 
             return crow::response(json);
     });

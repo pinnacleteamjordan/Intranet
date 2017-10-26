@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/global.css">
+</head>
+<body>
+{{{navigation}}}
+<div class="representatives">
+    <div class="currentusers">
+        <ul class="ulsearch">
+            <li class="search">Search</li>
+            <li><input class="searchbar" type="text" placeholder="Search" id="search"></li>
+        </ul>
+        <ul class="reps" id="reps">
+        </ul>
+        <ul class="options">
+            <li class="create">Create New Rep</li>
+            <li class="delete">Delete Rep</li>
+        </ul>
+    </div>
+    <div class="edit">
+        <div class="col one">
+            <div class="split">
+                <p>First Name</p>
+                <hr>
+                <input type="text" placeholder="First Name" id="firstname">
+            </div>
+            <div class="split">
+                <p>Last Name</p>
+                <hr>
+                <input type="text" placeholder="Last Name" id="lastname">
+            </div>
+            <p>Picture</p>
+            <input type="file" id="picture">
+        </div>
+        <div class="col two">
+            <p>Title</p>
+            <hr>
+            <input type="text" placeholder="Title" id="title">
+            <p>Email Address</p>
+            <hr>
+            <input type="text" placeholder="Email Address" id="emailaddress">
+            <p>Phone Number</p>
+            <hr>
+            <input type="text" placeholder="+1(234) 567-8901 ext. 123" id="phonenumber">
+            <div id="phoneholder">
+            </div>
+            <div class="addphone">
+                <p>Add Phone</p>
+                <hr>
+                <select id="addphone">
+                    <option value=0>Work Phone</option>
+                    <option value=1>Cell Phone</option>
+                    <option value=2>Fax Number</option>
+                    <option value=3>Phone</option>
+                </select>
+                <input type="button" id="btnaddphone" value="Add">
+            </div>
+            <p>Facebook</p>
+            <hr>
+            <input type="text" id="facebook" placeholder="Link to Facebook">
+            <p>Twitter</p>
+            <hr>
+            <input type="text" id="twitter" placeholder="Link to Twitter">
+            <p>Linkedin</p>
+            <hr>
+            <input type="text" id="linkedin" placeholder="Link to Linkedin">
+        </div>
+        <div class="col three">
+            <p>Province</p>
+            <hr>
+            <select id="province">
+                <option value=0>British Columbia</option>
+                <option value=1>Alberta</option>
+                <option value=2>Saskatchewan</option>
+                <option value=3>Manitoba</option>
+                <option value=4>Ontario</option>
+                <option value=5>Quebec</option>
+                <option value=6>Newfoundland &amp; Labrador</option>
+                <option value=7>New Brunswick</option>
+                <option value=8>Prince Edward Island</option>
+                <option value=9>Nova Scotia</option>
+                <option value=10>Yukon Territory</option>
+                <option value=11>Northwest Territories</option>
+                <option value=12>Nunavut</option>
+            </select>
+            <p>City</p>
+            <hr>
+            <input type="text" placeholder="City" id="city">
+        </div>
+        <div class="row">
+            <p>Biography</p>
+            <hr>
+            <textarea id="biography"></textarea>
+            <input type="button" value="Save ALL Changes" id="modify">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/static/js/representatives.js"></script>
+<script type="text/javascript" src="/static/js/navigation.js"></script>
+</body>
+</html>
